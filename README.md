@@ -36,6 +36,26 @@ import torch
 exit()
 ```
 
+## How to use AllenNLP?
+### AllenNLP Introduction
+> A natural language processing platform for building state-of-the-art models. A complete platform for solving natural language processing tasks in PyTorch.
+
+### Install AllenNLP
+```
+pip install allennlp==2.1.0 allennlp-models==2.1.0
+```
+
+### AllenNLP examples
+
+```
+cd allennlp
+
+allennlp dir:
+    - named_entity_recognition
+    - sementic_role_labeling
+    - reading_comprehension
+```
+
 
 
 
