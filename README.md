@@ -19,14 +19,17 @@ sh Anaconda3-2022.05-Linux-x86_64.sh
 Step 2: Create a conda environment
 ```shell
 conda create -n cse842 python=3.9
-conda activate cse842
+source activate cse842
 ```
 
 Step 3: Install PyTorch
 ```shell
 # webpage: https://pytorch.org/
 ### I prefer to use pip command to install python packages.
-pip3 install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+pip install torch torchvision torchaudio --extra-index-url https://download.pytorch.org/whl/cu116
+pip install torchtext
+pip install pytorch-crf
+pip install matplotlib
 ```
 
 step 4: double check if successfully installed the pytorch

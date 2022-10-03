@@ -1,2 +1,5 @@
 *.tar.gz
 *.zip
+*.300d.txt
+*.300d.txt.pt
+__pycache__
