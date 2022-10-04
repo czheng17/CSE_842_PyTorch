@@ -39,6 +39,13 @@ import torch
 exit()
 ```
 
+## How to install Huggingface Transformer library:
+
+```
+pip install transformers
+### Successfully installed huggingface-hub-0.10.0 pyyaml-6.0 regex-2022.9.13 tokenizers-0.12.1 transformers-4.22.2
+```
+
 ## How to use AllenNLP?
 ### AllenNLP Introduction
 > A natural language processing platform for building state-of-the-art models. A complete platform for solving natural language processing tasks in PyTorch.
