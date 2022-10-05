@@ -55,7 +55,7 @@ def init_weights(m):
 
 ##########################################################################################################################
 # Set up the hyper-parameters.
-print('-----------------------------start set up heper-parameter-----------------------------')
+print('-----------------------------start set up heper-parameter, load date and glove embedding-----------------------------')
 ##########################################################################################################################
 batch_size = 64
 train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size) 
@@ -70,12 +70,12 @@ train_epochs = 5
 
 glove_embedding = d2l.TokenEmbedding("glove.6b.100d")
 embeds = glove_embedding[vocab.idx_to_token]
-print('-----------------------------end set up heper-parameter----------------------------')
+print('-----------------------------end set up heper-parameter and load glove embedding----------------------------')
 
 
 ##########################################################################################################################
 # Instance the CNN and put the Glove embedding into the model
-print('-----------------------------start Instance the CNN model-----------------------------')
+print('-----------------------------start Instance the CNN model, load date and glove embedding-----------------------------')
 ##########################################################################################################################
 net = Sentiment_Analysis_CNN(len(vocab), embed_size, kernel_sizes, num_channels)
 net.apply(init_weights)
@@ -97,7 +97,7 @@ print('-----------------------------end training process------------------------
 # Test the model.
 print('-----------------------------start testing process-----------------------------')
 ##########################################################################################################################
-sentence = "I love the movie because of actor"
+sentence = "a very well-made, funny and entertaining picture."
 sentence_tensor = torch.tensor(vocab[sentence.split()], device=d2l.try_gpu())
 
 label = torch.argmax(
