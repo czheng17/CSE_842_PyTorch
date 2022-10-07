@@ -1,5 +1,11 @@
 # CSE_842_PyTorch
 
+## Google colab links:
+>- Warm UP: [link](https://www.example.com/my%20great%20page)
+>- Sentiment Analysis MLP: [link](https://colab.research.google.com/drive/1PmcbtS22Xt-PDJdc2uDgJrz7Wn6es3NL?authuser=1#scrollTo=PLn7EqNZom_Y)
+>- Sentiment Analysis CNN: [link](https://colab.research.google.com/drive/1C3nFBYEOTwNbatBJj0rDUhFTMm4hOPZX?authuser=1#scrollTo=B1cQ-LbNokcN)
+>- Reading Comprehension: [link](https://colab.research.google.com/drive/1bNUZdX91R0l2IpOgOX3VMCM8zy18GRl9?authuser=1#scrollTo=W8hL4ruV1o6f)
+
 ## How to setup a standard Pytorch Environment?
 
 Step 1: Install Anaconda:
