@@ -19,8 +19,6 @@ batch_size = 64
 train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size) 
 
 embed_size = 100
-kernel_sizes = [3, 4, 5]
-num_channels = [100, 100, 100]
 devices = d2l.try_all_gpus()
 
 learning_rate = 1e-3
@@ -28,15 +26,17 @@ train_epochs = 5
 
 dropout_rate = 0.5 ## the range from 0 to 1
 
+sentence = "a very well-made, funny and entertaining picture."
+
 glove_embedding = d2l.TokenEmbedding("glove.6b.100d")
 print('-----------------------------end set up heper-parameter, load data and glove embedding----------------------------')
 
 
 ##########################################################################################################################
-# Create the Convolutional Neural Network on Sentiment Analysis Task.
+# Create the MLP model on Sentiment Analysis Task.
 ##########################################################################################################################
 class Sentiment_Analysis_MLP(nn.Module):                                                     
-    def __init__(self, vocab_size, embed_size, kernel_sizes, num_channels, **kwargs):
+    def __init__(self, vocab_size, embed_size, **kwargs):
 
         super(Sentiment_Analysis_MLP, self).__init__(**kwargs)
 
@@ -69,7 +69,7 @@ def init_weights(m):
 print('-----------------------------start Instance the MLP model-----------------------------')
 ##########################################################################################################################
 embeds = glove_embedding[vocab.idx_to_token]
-net = Sentiment_Analysis_MLP(len(vocab), embed_size, kernel_sizes, num_channels)
+net = Sentiment_Analysis_MLP(len(vocab), embed_size)
 net.apply(init_weights)
 net.embedding.weight.data.copy_(embeds)
 print('-----------------------------end Instance the MLP model-----------------------------')
@@ -87,7 +87,7 @@ print('-----------------------------end training process------------------------
 # Test the model.
 print('-----------------------------start testing process-----------------------------')
 ##########################################################################################################################
-sentence = "a very well-made, funny and entertaining picture."
+
 sentence_tensor = torch.tensor(vocab[sentence.split()], device=d2l.try_gpu())
 
 label = torch.argmax(

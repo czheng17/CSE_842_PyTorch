@@ -19,14 +19,18 @@ batch_size = 64
 train_iter, test_iter, vocab = d2l.load_data_imdb(batch_size) 
 
 embed_size = 100
-kernel_sizes = [3, 4, 5]
-num_channels = [100, 100, 100]
+kernel_sizes = [3]
+num_channels = [100]
+# kernel_sizes = [3, 4, 5]
+# num_channels = [100, 100, 100]
 devices = d2l.try_all_gpus()
 
 learning_rate = 1e-3
 train_epochs = 5
 
 dropout_rate = 0.5 ## the range from 0 to 1
+
+sentence = "a very well-made, funny and entertaining picture."
 
 glove_embedding = d2l.TokenEmbedding("glove.6b.100d")
 print('-----------------------------end set up heper-parameter, load data and glove embedding----------------------------')
@@ -97,7 +101,7 @@ print('-----------------------------end training process------------------------
 # Test the model.
 print('-----------------------------start testing process-----------------------------')
 ##########################################################################################################################
-sentence = "a very well-made, funny and entertaining picture."
+
 sentence_tensor = torch.tensor(vocab[sentence.split()], device=d2l.try_gpu())
 
 label = torch.argmax(
