@@ -2,13 +2,13 @@
 
 ## Google colab links:
 >- Warm UP: [link](https://colab.research.google.com/drive/1ISjZJkr-2IDzS9aPQ9RsQ0o_1kqzEFjJ?authuser=1)
->- Sentiment Analysis MLP: [link](https://colab.research.google.com/drive/1PmcbtS22Xt-PDJdc2uDgJrz7Wn6es3NL?authuser=1#scrollTo=PLn7EqNZom_Y)
->- Sentiment Analysis CNN: [link](https://colab.research.google.com/drive/1C3nFBYEOTwNbatBJj0rDUhFTMm4hOPZX?authuser=1#scrollTo=B1cQ-LbNokcN)
->- Reading Comprehension: [link](https://colab.research.google.com/drive/1bNUZdX91R0l2IpOgOX3VMCM8zy18GRl9?authuser=1#scrollTo=W8hL4ruV1o6f)
+>- Sentiment Analysis MLP: [link](https://colab.research.google.com/drive/1PmcbtS22Xt-PDJdc2uDgJrz7Wn6es3NL?authuser=0#scrollTo=PLn7EqNZom_Y)
+>- Sentiment Analysis CNN: [link](https://colab.research.google.com/drive/1C3nFBYEOTwNbatBJj0rDUhFTMm4hOPZX?authuser=0#scrollTo=B1cQ-LbNokcN)
+>- Reading Comprehension: [link](https://colab.research.google.com/drive/1bNUZdX91R0l2IpOgOX3VMCM8zy18GRl9?authuser=0#scrollTo=W8hL4ruV1o6f)
 
 ## Two Assignments (DIY your model):
->- Sentiment Analysis: [link](https://colab.research.google.com/drive/1gS5cVwk4zeKP6AD6gSsLS2G4jUNDtp9w?authuser=1#scrollTo=D6rgNEuamq40)
->- Reading Comprehension: [link](https://colab.research.google.com/drive/1MNbOHeOroVFjoYGy_KVmM6yx_Tzq2o45?authuser=1#scrollTo=4lM91gE8qQqv)
+>- Sentiment Analysis: [link](https://colab.research.google.com/drive/1gS5cVwk4zeKP6AD6gSsLS2G4jUNDtp9w?authuser=0#scrollTo=D6rgNEuamq40)
+>- Reading Comprehension: [link](https://colab.research.google.com/drive/1MNbOHeOroVFjoYGy_KVmM6yx_Tzq2o45?authuser=0#scrollTo=4lM91gE8qQqv)
 
 ## How to setup a standard Pytorch Environment?
 
