@@ -8,7 +8,7 @@
 
 ## Two Assignments (DIY your model):
 >- Sentiment Analysis: [link](https://colab.research.google.com/drive/128CuZ2PPLeqkoXJyhlGeWHaVXZtQJVaT?authuser=0#scrollTo=PLn7EqNZom_Y)
->- Reading Comprehension: [link](https://colab.research.google.com/drive/1MNbOHeOroVFjoYGy_KVmM6yx_Tzq2o45?authuser=0#scrollTo=NXHYqnKf12DA)
+>- Reading Comprehension: [link](https://colab.research.google.com/drive/1MNbOHeOroVFjoYGy_KVmM6yx_Tzq2o45?authuser=0#scrollTo=W8hL4ruV1o6f)
 
 ## How to setup a standard Pytorch Environment?
 
