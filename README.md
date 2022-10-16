@@ -5,8 +5,8 @@
 >- Sentiment Analysis MLP: [link](https://colab.research.google.com/drive/1PmcbtS22Xt-PDJdc2uDgJrz7Wn6es3NL?authuser=0#scrollTo=PLn7EqNZom_Y)
 >- Sentiment Analysis CNN: [link](https://colab.research.google.com/drive/1C3nFBYEOTwNbatBJj0rDUhFTMm4hOPZX?authuser=0#scrollTo=B1cQ-LbNokcN)
 >- Reading Comprehension: [link](https://colab.research.google.com/drive/1bNUZdX91R0l2IpOgOX3VMCM8zy18GRl9?authuser=0#scrollTo=W8hL4ruV1o6f)
->- Bag-of-word experiment: [link](https://drive.google.com/file/d/1imq405MXER61SnOWhL3-c_l1LfctNubL/view?usp=sharing)
->- Word2Vec DIY: [link](https://drive.google.com/file/d/1U83W7I99IokPORCcqeEAoJVHglvPC9RE/view?usp=sharing)
+>- Bag-of-word experiment: [link](https://colab.research.google.com/drive/1imq405MXER61SnOWhL3-c_l1LfctNubL?authuser=0#scrollTo=KdAzwy8v62SP)
+>- Word2Vec DIY: [link](https://colab.research.google.com/drive/1U83W7I99IokPORCcqeEAoJVHglvPC9RE?authuser=0#scrollTo=zEkrBmON7a83)
 
 ## Two Assignments (DIY your model):
 >- Sentiment Analysis: [link](https://colab.research.google.com/drive/128CuZ2PPLeqkoXJyhlGeWHaVXZtQJVaT?authuser=0#scrollTo=PLn7EqNZom_Y)
