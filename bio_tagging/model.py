@@ -40,7 +40,6 @@ class RNNTagger(nn.Module):
         self.rnn = nn.GRU(input_size=emb_dim, hidden_size=rnn_size, 
                           bidirectional=True, num_layers=1)
 
-        # Output layer. As in the example last week, the input will be two times
         # the RNN size since we are using a bidirectional RNN.
         self.top_layer = nn.Linear(2*rnn_size, self.n_labels)
  
@@ -49,41 +48,19 @@ class RNNTagger(nn.Module):
         self.pad_word_id = text_field.vocab.stoi[text_field.pad_token]
         self.pad_label_id = label_field.vocab.stoi[label_field.pad_token]
     
-        # Loss function that we will use during training.
         self.loss = torch.nn.CrossEntropyLoss(reduction='sum')
-        
-    def compute_outputs(self, sentences):
-        # The words in the documents are encoded as integers. The shape of the documents
-        # tensor is (max_len, n_docs), where n_docs is the number of documents in this batch,
-        # and max_len is the maximal length of a document in the batch.
-
-        # First look up the embeddings for all the words in the documents.
-        # The shape is now (max_len, n_sentences, emb_dim).        
-        embedded = self.embedding(sentences)
-
-        # Apply the RNN.
-        # The shape of the RNN output tensor is (max_len, n_sentences, 2*rnn_size).
-        rnn_out, _ = self.rnn(embedded)
-        
-        # Apply the linear output layer.
-        # The shape of the output tensor is (max_len, n_sentences, n_labels).
-        out = self.top_layer(rnn_out)
-        
-        # Find the positions where the token is a dummy padding token.
-        pad_mask = (sentences == self.pad_word_id).float()
-
-        # For these positions, we add some large number in the column corresponding
-        # to the dummy padding label.
-        out[:, :, self.pad_label_id] += pad_mask*10000
-
-        return out
                 
     def forward(self, sentences, labels):
-        # As discussed above, this method first computes the predictions, and then
-        # the loss function.
+        embedded = self.embedding(sentences)
+
+        rnn_out, _ = self.rnn(embedded) ### (max_len, n_sentences, 2*rnn_size).
         
-        # Compute the outputs. The shape is (max_len, n_sentences, n_labels).
-        scores = self.compute_outputs(sentences)
+        scores = self.top_layer(rnn_out)  ### (max_len, n_sentences, n_labels).
+        
+        pad_mask = (sentences == self.pad_word_id).float() ### Find the positions where the token is a dummy padding token.
+
+        # For these positions, we add some large number in the column corresponding to the dummy padding label.
+        scores[:, :, self.pad_label_id] += pad_mask*10000
         
         # Flatten the outputs and the gold-standard labels, to compute the loss.
         # The input to this loss needs to be one 2-dimensional and one 1-dimensional tensor.
@@ -92,16 +69,24 @@ class RNNTagger(nn.Module):
         return self.loss(scores, labels)
 
     def predict(self, sentences):
-        # Compute the outputs from the linear units.
-        scores = self.compute_outputs(sentences)
-
+        embedded = self.embedding(sentences)
+        rnn_out, _ = self.rnn(embedded) ### (max_len, n_sentences, 2*rnn_size).
+        scores = self.top_layer(rnn_out)  ### (max_len, n_sentences, n_labels).
+        pad_mask = (sentences == self.pad_word_id).float() ### Find the positions where the token is a dummy padding token.
+        # For these positions, we add some large number in the column corresponding to the dummy padding label.
+        scores[:, :, self.pad_label_id] += pad_mask*10000
         # Select the top-scoring labels. The shape is now (max_len, n_sentences).
+
         predicted = scores.argmax(dim=2)
-        # We transpose the prediction to (n_sentences, max_len), and convert it
-        # to a NumPy matrix.
+        # We transpose the prediction to (n_sentences, max_len), and convert it to a NumPy matrix.
         return predicted.t().cpu().numpy(), scores.view(-1, scores.size(-1)).cpu().numpy()
 
 
+
+
+
+
+### Extension. RNN + CRF. Very classic on machine translation, bio taging, ner, semantic role labeling, etc.
 from torchcrf import CRF
 
 class RNNCRFTagger(nn.Module):
